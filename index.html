@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIYAM SM | Personal Website</title>
+<style>
+:root{--blue:#1769e0;--navy:#0b3f91;--pale:#eaf3ff;--text:#17243a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,"Noto Sans Bengali",sans-serif;color:var(--text);line-height:1.6}
+header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5edf8;z-index:2}
+nav{max-width:1000px;margin:auto;padding:15px 20px;display:flex;justify-content:space-between;align-items:center}
+.brand{font-size:22px;font-weight:800;color:var(--blue);letter-spacing:1px}
+nav a{color:var(--navy);text-decoration:none;margin-left:16px}
+.hero{background:linear-gradient(135deg,var(--pale),white);padding:65px 20px}
+.hero-inner{max-width:900px;margin:auto;display:flex;align-items:center;justify-content:center;gap:38px;flex-wrap:wrap}
+.photo{width:200px;height:200px;border-radius:50%;object-fit:cover;background:#dceaff;border:6px solid white;box-shadow:0 8px 28px #1769e033}
+h1{font-size:clamp(38px,7vw,58px);line-height:1.1;color:var(--navy);margin:8px 0}
+.eyebrow{color:var(--blue);font-weight:bold}
+.hero p{color:#64748b}
+.button{display:inline-block;background:var(--blue);color:white;text-decoration:none;padding:11px 22px;border-radius:9px;font-weight:bold}
+section{max-width:900px;margin:auto;padding:48px 20px}
+h2{color:var(--navy);font-size:28px}
+.card{background:var(--pale);border:1px solid #d8e8ff;border-radius:15px;padding:24px}
+.contact-item{background:white;border-radius:9px;padding:12px 15px;margin:10px 0;overflow-wrap:anywhere}
+footer{text-align:center;background:var(--navy);color:white;padding:20px}
+@media(max-width:600px){nav{align-items:flex-start;gap:10px;flex-direction:column}.hero-inner{text-align:center}.photo{width:165px;height:165px}}
+</style>
+</head>
+<body>
+<header><nav><div class="brand">SIYAM SM</div><div><a href="#about">About</a><a href="#portfolio">Portfolio</a><a href="#contact">Contact</a></div></nav></header>
+<main>
+<div class="hero"><div class="hero-inner">
+<img class="photo" src="profile.jpg" alt="Siyam-এর ছবি" onerror="this.style.display='none'">
+<div><div class="eyebrow">WELCOME TO MY WEBSITE</div><h1>SIYAM SM</h1>
+<p>এটি আমার ব্যক্তিগত ওয়েবসাইট। এখানে আমার পরিচয় ও কাজের তথ্য থাকবে।</p>
+<a class="button" href="#contact">Contact Me</a></div>
+</div></div>
+<section id="about"><h2>About Me</h2><div class="card">হ্যালো! আমি SIYAM SM। আমার ব্যক্তিগত ওয়েবসাইটে তোমাকে স্বাগতম।</div></section>
+<section id="portfolio"><h2>Portfolio</h2><div class="card">এখানে পরে তোমার কাজের ছবি, ভিডিও ও প্রজেক্ট যোগ করা যাবে।</div></section>
+<section id="contact"><h2>Contact</h2><div class="card">
+<div class="contact-item"><b>Name:</b> SIYAM SM</div>
+<div class="contact-item"><b>Address:</b> এখানে নিজের ঠিকানা লিখবে</div>
+<div class="contact-item"><b>Email:</b> এখানে নিজের ইমেইল লিখবে</div>
+</div></section>
+</main><footer>© 2026 SIYAM SM. All rights reserved.</footer>
+</body></html>
