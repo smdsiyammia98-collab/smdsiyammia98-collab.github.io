@@ -1,80 +1,418 @@
+
 <!DOCTYPE html>
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SIYAM_SM | Personal Website</title>
+
 <style>
-:root{--blue:#1769e0;--navy:#0b3f91;--pale:#eaf3ff;--text:#17243a}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,"Noto Sans Bengali",sans-serif;color:var(--text);line-height:1.6}
-header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5edf8;z-index:2}
-nav{max-width:1000px;margin:auto;padding:15px 20px;display:flex;justify-content:space-between;align-items:center}
-.brand{font-size:22px;font-weight:800;color:var(--blue);letter-spacing:1px}
-nav a{color:var(--navy);text-decoration:none;margin-left:16px}
-.hero{background:linear-gradient(135deg,var(--pale),white);padding:65px 20px}
-.hero-inner{max-width:900px;margin:auto;display:flex;align-items:center;justify-content:center;gap:38px;flex-wrap:wrap}
-.photo{width:200px;height:200px;border-radius:50%;object-fit:cover;background:#dceaff;border:6px solid white;box-shadow:0 8px 28px #1769e033}
-h1{font-size:clamp(38px,7vw,58px);line-height:1.1;color:var(--navy);margin:8px 0}
-.eyebrow{color:var(--blue);font-weight:bold}
-.hero p{color:#64748b}
-.button{display:inline-block;background:var(--blue);color:white;text-decoration:none;padding:11px 22px;border-radius:9px;font-weight:bold}
-section{max-width:900px;margin:auto;padding:48px 20px}
-h2{color:var(--navy);font-size:28px}
-.card{background:var(--pale);border:1px solid #d8e8ff;border-radius:15px;padding:24px}
-.contact-item{background:white;border-radius:9px;padding:12px 15px;margin:10px 0;overflow-wrap:anywhere}
-footer{text-align:center;background:var(--navy);color:white;padding:20px}
-@media(max-width:600px){nav{align-items:flex-start;gap:10px;flex-direction:column}.hero-inner{text-align:center}.photo{width:165px;height:165px}}
+:root{
+--blue:#1769e0;
+--navy:#0b3f91;
+--pale:#eaf3ff;
+--text:#17243a;
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+margin:0;
+font-family:Arial,"Noto Sans Bengali",sans-serif;
+color:var(--text);
+line-height:1.6;
+}
+
+/* WELCOME SCREEN */
+
+.welcome{
+position:fixed;
+inset:0;
+z-index:9999;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+text-align:center;
+padding:20px;
+background:linear-gradient(135deg,#061b45,#1769e0,#eaf3ff);
+color:white;
+transition:opacity .9s ease,visibility .9s ease;
+}
+
+.welcome.hide{
+opacity:0;
+visibility:hidden;
+}
+
+.welcome-photo{
+width:170px;
+height:170px;
+border-radius:50%;
+object-fit:cover;
+border:5px solid white;
+box-shadow:0 0 25px #ffffff,0 0 55px #42a5ff;
+animation:rotatePhoto 8s linear infinite;
+}
+
+@keyframes rotatePhoto{
+from{transform:rotate(0deg)}
+to{transform:rotate(360deg)}
+}
+
+.welcome h1{
+font-size:clamp(25px,7vw,42px);
+margin:25px 0 5px;
+color:white;
+}
+
+.welcome h2{
+font-size:25px;
+margin:5px;
+}
+
+.welcome p{
+margin:10px 0 25px;
+}
+
+.enter-btn{
+background:white;
+color:#1769e0;
+border:0;
+padding:14px 30px;
+border-radius:30px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 0 20px #ffffff88;
+transition:.3s;
+}
+
+.enter-btn:hover{
+transform:scale(1.08);
+background:#eaf3ff;
+}
+
+/* WEBSITE */
+
+.site-content{
+opacity:0;
+visibility:hidden;
+transition:opacity 1s ease;
+}
+
+.site-content.show{
+opacity:1;
+visibility:visible;
+}
+
+header{
+position:sticky;
+top:0;
+background:#fff;
+border-bottom:1px solid #e5edf8;
+z-index:2;
+}
+
+nav{
+max-width:1000px;
+margin:auto;
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.brand{
+font-size:22px;
+font-weight:800;
+color:var(--blue);
+letter-spacing:1px;
+}
+
+nav a{
+color:var(--navy);
+text-decoration:none;
+margin-left:16px;
+}
+
+.hero{
+background:linear-gradient(135deg,var(--pale),white);
+padding:65px 20px;
+}
+
+.hero-inner{
+max-width:900px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:38px;
+flex-wrap:wrap;
+}
+
+.photo{
+width:200px;
+height:200px;
+border-radius:50%;
+object-fit:cover;
+background:#dceaff;
+border:6px solid white;
+box-shadow:0 8px 28px #1769e033;
+}
+
+h1{
+font-size:clamp(38px,7vw,58px);
+line-height:1.1;
+color:var(--navy);
+margin:8px 0;
+}
+
+.eyebrow{
+color:var(--blue);
+font-weight:bold;
+}
+
+.hero p{
+color:#64748b;
+}
+
+.button{
+display:inline-block;
+background:var(--blue);
+color:white;
+text-decoration:none;
+padding:11px 22px;
+border-radius:9px;
+font-weight:bold;
+}
+
+section{
+max-width:900px;
+margin:auto;
+padding:48px 20px;
+}
+
+h2{
+color:var(--navy);
+font-size:28px;
+}
+
+.card{
+background:var(--pale);
+border:1px solid #d8e8ff;
+border-radius:15px;
+padding:24px;
+}
+
+.contact-item{
+background:white;
+border-radius:9px;
+padding:12px 15px;
+margin:10px 0;
+overflow-wrap:anywhere;
+}
+
+footer{
+text-align:center;
+background:var(--navy);
+color:white;
+padding:20px;
+}
+
+@media(max-width:600px){
+nav{
+align-items:flex-start;
+gap:10px;
+flex-direction:column;
+}
+
+.hero-inner{text-align:center}
+
+.photo{
+width:165px;
+height:165px;
+}
+
+.welcome-photo{
+width:145px;
+height:145px;
+}
+}
 </style>
 </head>
+
 <body>
-<header><nav><div class="brand">SIYAM_SM</div><div><a href="#about">About</a><a href="#portfolio">Portfolio</a><a href="#contact">Contact</a></div></nav></header>
+
+<!-- WELCOME INTRO -->
+
+<div class="welcome" id="welcome">
+
+<img
+class="welcome-photo"
+src="IMG_20261102_175221_151.png"
+alt="SIYAM SM"
+>
+
+<h1>WELCOME TO MY WEBSITE</h1>
+
+<h2>HI, I AM SIYAM SM</h2>
+
+<p>আমার ব্যক্তিগত ওয়েবসাইটে তোমাকে স্বাগতম।</p>
+
+<button class="enter-btn" onclick="enterWebsite()">
+ENTER MY WEBSITE
+</button>
+
+</div>
+
+<!-- MAIN WEBSITE -->
+
+<div class="site-content" id="website">
+
+<header>
+<nav>
+<div class="brand">SIYAM_SM</div>
+
+<div>
+<a href="#about">About</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+</header>
+
 <main>
-<div class="hero"><div class="hero-inner">
-<img class="photo" src="IMG_20261102_175221_151.png" alt="Siyam-এর ছবি" onerror="this.style.display='none'">
-<div><div class="eyebrow">WELCOME TO MY WEBSITE</div><h1>SIYAM SM</h1>
-<p>এটি আমার ব্যক্তিগত ওয়েবসাইট। এখানে আমার পরিচয় ও কাজের তথ্য থাকবে।</p>
-<a class="button" href="#contact">Contact Me</a></div>
-</div></div>
-<section id="about"><h2>About Me</h2><div class="card">হ্যালো! আমি SIYAM SM। আমার ব্যক্তিগত ওয়েবসাইটে তোমাকে স্বাগতম।</div></section>
-<section id="portfolio">
-  <h2>My Work Title</h2>
-  <img src="Screenshot_20261104-173709.jpg"
-alt="Common Networking Abbreviations"
-style="width:100%; max-width:560px;
-display:block; margin:0 auto 15px;
-border-radius:12px;">
-  <div class="card">
-    <div style="position:relative;width:100%;max-width:560px;
-                aspect-ratio:9/16;margin:auto;">
-      <iframe
-        src="https://www.youtube.com/embed/qm2WRGFT9ew"
-        style="width:100%;height:100%;border:0;border-radius:12px;"
-        title="SIYAM_SM YouTube Video"
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
+
+<div class="hero">
+<div class="hero-inner">
+
+<img
+class="photo"
+src="IMG_20261102_175221_151.png"
+alt="Siyam-এর ছবি"
+>
+
+<div>
+
+<div class="eyebrow">
+WELCOME TO MY WEBSITE
+</div>
+
+<h1>SIYAM SM</h1>
+
+<p>
+এটি আমার ব্যক্তিগত ওয়েবসাইট।
+এখানে আমার পরিচয় ও কাজের তথ্য থাকবে।
+</p>
+
+<a class="button" href="#contact">
+Contact Me
+</a>
+
+</div>
+</div>
+</div>
+
+<section id="about">
+
+<h2>About Me</h2>
+
+<div class="card">
+হ্যালো! আমি SIYAM SM।
+আমার ব্যক্তিগত ওয়েবসাইটে তোমাকে স্বাগতম।
+</div>
+
 </section>
-<section id="contact"><h2>Contact</h2><div class="card">
-<div class="contact-item"><b>Name:</b> SIYAM_SM</div>
+
+<section id="portfolio">
+
+<h2>My Work Title</h2>
+
+<img
+src="Screenshot_20261104-173709.jpg"
+alt="Common Networking Abbreviations"
+style="width:100%;max-width:560px;display:block;margin:0 auto 15px;border-radius:12px;"
+>
+
+<div class="card">
+
+<div style="position:relative;width:100%;max-width:560px;aspect-ratio:9/16;margin:auto;">
+
+<iframe
+src="https://www.youtube.com/embed/qm2WRGFT9ew"
+style="width:100%;height:100%;border:0;border-radius:12px;"
+title="SIYAM_SM YouTube Video"
+allowfullscreen>
+</iframe>
+
+</div>
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2>Contact</h2>
+
+<div class="card">
+
 <div class="contact-item">
-  Phone 1:
-  <a href="tel:+8801863730957">Call Number 1</a>
+<b>Name:</b> SIYAM_SM
 </div>
 
 <div class="contact-item">
-  Phone 2:
-  <a href="tel:+8801985017227">Call Number 2</a>
+Phone 1:
+<a href="tel:+8801863730957">Call Number 1</a>
 </div>
-<div class="contact-item"><b>Email:</b> mdsiyamhasanshanto98@gmail.com</div>
 
 <div class="contact-item">
-  WhatsApp:
-  <a href="https://wa.me/26662634806" target="_blank">
-    Chat on WhatsApp
-  </a>
+Phone 2:
+<a href="tel:+8801985017227">Call Number 2</a>
 </div>
-</div></section>
-</main><footer>© 2026 SIYAM_SM. All rights reserved.</footer>
-</body></html>
+
+<div class="contact-item">
+<b>Email:</b> mdsiyamhasanshanto98@gmail.com
+</div>
+
+<div class="contact-item">
+WhatsApp:
+<a href="https://wa.me/26662634806" target="_blank">
+Chat on WhatsApp
+</a>
+</div>
+
+</div>
+</section>
+
+</main>
+
+<footer>
+© 2026 SIYAM_SM. All rights reserved.
+</footer>
+
+</div>
+
+<script>
+
+function enterWebsite(){
+
+const welcome = document.getElementById("welcome");
+const website = document.getElementById("website");
+
+welcome.classList.add("hide");
+
+website.classList.add("show");
+
+setTimeout(function(){
+welcome.style.display="none";
+},900);
+
+}
+
+</script>
+
+</body>
+</html>
